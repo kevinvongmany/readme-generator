@@ -23,7 +23,10 @@ const questions = [
 function writeToFile(fileName, data) {
   const readmeMarkdown = generateMarkdown(data);
   fs.writeFile(fileName, readmeMarkdown, (err) =>
-    err ? console.error(err) : console.log("Readme!")
+    err ? console.error(err) : console.log(`Initial README.md file successfully generated based on your prompts! 
+Please open the file located in ${fileName} to view & edit the README.md file. 
+**HINT** In VSCode, right-click the file and select 'Open Preview' to see the file before committing to your repository.
+Rename it and add to your project folder once complete.`)
   );
 }
 
