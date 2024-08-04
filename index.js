@@ -67,7 +67,7 @@ function init() {
     {
       type: "input",
       message: questions[6],
-      name: "contributing",
+      name: "contribution",
     },
     {
       type: "input",
