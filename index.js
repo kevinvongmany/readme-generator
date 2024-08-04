@@ -23,7 +23,9 @@ const questions = [
 function writeToFile(fileName, data) {
   const readmeMarkdown = generateMarkdown(data);
   fs.writeFile(fileName, readmeMarkdown, (err) =>
-    err ? console.error(err) : console.log(`Initial README.md file successfully generated based on your prompts! 
+    err
+      ? console.error(err)
+      : console.log(`Initial README.md file successfully generated based on your prompts! 
 Please open the file located in '${fileName}' to review & make edits to the README.md file. 
 **HINT** In VSCode, right-click the file and select 'Open Preview' to review the README.md before committing to your repository.
 Make sure to rename the file and add to your project folder once complete.`)
@@ -32,73 +34,83 @@ Make sure to rename the file and add to your project folder once complete.`)
 
 // TODO: Create a function to initialize app
 function init() {
-  inquirer.prompt([
-    {
-      type: "input",
-      message: questions[0],
-      name: "title",
-      default: "My Project",
-    },
-    {
-      type: "input",
-      message: questions[1],
-      name: "description",
-    },
-    {
-      type: "input",
-      message: questions[2],
-      name: "installation",
-    },
-    {
-      type: "input",
-      message: questions[3],
-      name: "installationCode",
-    },
-    {
-      type: "input",
-      message: questions[4],
-      name: "usage",
-    },
-    {
-      type: "input",
-      message: questions[5],
-      name: "usageCode",
-    },
-    {
-      type: "input",
-      message: questions[6],
-      name: "contribution",
-    },
-    {
-      type: "input",
-      message: questions[7],
-      name: "tests",
-    },
-    {
-      type: "input",
-      message: questions[8],
-      name: "testCode",
-    },
-    {
-      type: "list",
-      message: questions[9],
-      name: "license",
-      choices: ["Apache 2.0", "GPL 3.0", "BSD 3", "MIT", "None"],
-    },
-    {
-      type: "input",
-      message: questions[10],
-      name: "github",
-    },
-    {
-      type: "input",
-      message: questions[11],
-      name: "email",
-    },
-  ])
-  .then((data) => {
-    writeToFile(`output/${data.title}_README.md`, data);
-  });
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: questions[0],
+        name: "title",
+        default: "My Project",
+      },
+      {
+        type: "input",
+        message: questions[1],
+        name: "description",
+      },
+      {
+        type: "input",
+        message: questions[2],
+        name: "installation",
+      },
+      {
+        type: "input",
+        message: questions[3],
+        name: "installationCode",
+      },
+      {
+        type: "input",
+        message: questions[4],
+        name: "usage",
+      },
+      {
+        type: "input",
+        message: questions[5],
+        name: "usageCode",
+      },
+      {
+        type: "input",
+        message: questions[6],
+        name: "contribution",
+      },
+      {
+        type: "input",
+        message: questions[7],
+        name: "tests",
+      },
+      {
+        type: "input",
+        message: questions[8],
+        name: "testCode",
+      },
+      {
+        type: "list",
+        message: questions[9],
+        name: "license",
+        choices: [
+          "Apache 2.0",
+          "GPL 3.0",
+          "BSD 3",
+          "MIT",
+          "Boost 1.0",
+          "Creative Commons Zero v1.0 Universal",
+          "Eclipse Public License 1.0",
+          "None",
+        ],
+      },
+      {
+        type: "input",
+        message: questions[10],
+        name: "github",
+      },
+      {
+        type: "input",
+        message: questions[11],
+        name: "email",
+      },
+    ])
+    .then((data) => {
+      writeToFile(`output/${data.title}_README.md`, data);
+    });
 }
 
 // Function call to initialize app
