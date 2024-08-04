@@ -8,12 +8,12 @@ const questions = [
   "What is the title of your project?",
   "What is the description of your project?",
   "What are the installation instructions for your project?",
-  "Enter in any installation commands for your project.",
+  "Enter in any installation commands for your project. Use semicolons (;) to seperate your commands into a new line (optional)",
   "What is the usage information for your project?",
-  "Enter in any usage commands for your project",
+  "Enter in any usage commands for your project. Use semicolons (;) to seperate your commands into a new line (optional)",
   "What are the contribution guidelines for your project?",
   "What are the test instructions for your project?",
-  "Enter in any test commands for your project",
+  "Enter in any test commands for your project. Use semicolons (;) to seperate your commands into a new line (optional)",
   "What license would you like to use for your project?",
   "What is your GitHub username?",
   "What is your email address?",
@@ -24,9 +24,9 @@ function writeToFile(fileName, data) {
   const readmeMarkdown = generateMarkdown(data);
   fs.writeFile(fileName, readmeMarkdown, (err) =>
     err ? console.error(err) : console.log(`Initial README.md file successfully generated based on your prompts! 
-Please open the file located in ${fileName} to view & edit the README.md file. 
+Please open the file located in '${fileName}' to review & make edits to the README.md file. 
 **HINT** In VSCode, right-click the file and select 'Open Preview' to see the file before committing to your repository.
-Rename it and add to your project folder once complete.`)
+Make sure to rename the file and add to your project folder once complete.`)
   );
 }
 
@@ -37,7 +37,7 @@ function init() {
       type: "input",
       message: questions[0],
       name: "title",
-      required: true,
+      default: "My Project",
     },
     {
       type: "input",
