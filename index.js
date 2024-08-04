@@ -25,7 +25,7 @@ function writeToFile(fileName, data) {
   fs.writeFile(fileName, readmeMarkdown, (err) =>
     err ? console.error(err) : console.log(`Initial README.md file successfully generated based on your prompts! 
 Please open the file located in '${fileName}' to review & make edits to the README.md file. 
-**HINT** In VSCode, right-click the file and select 'Open Preview' to see the file before committing to your repository.
+**HINT** In VSCode, right-click the file and select 'Open Preview' to review the README.md before committing to your repository.
 Make sure to rename the file and add to your project folder once complete.`)
   );
 }
