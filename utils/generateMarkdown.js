@@ -3,13 +3,19 @@
 function renderLicenseBadge(license) {
   const licenseText = `[License: ${license}]`
   if (license === "MIT") {
-    return `![${licenseText}(https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+    return `[!${licenseText}(https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
   } else if (license === "Apache 2.0") {
-    return `![${licenseText}(https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+    return `[!${licenseText}(https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
   } else if (license === "GPL 3.0") {
-    return `![${licenseText}(https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
+    return `[!${licenseText}(https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
   } else if (license === "BSD 3") {
-    return `![${licenseText}(https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`
+    return `[!${licenseText}(https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`
+  } else if (license === "Boost 1.0") {
+    return `[!${licenseText}(https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`
+  } else if (license === "Creative Commons Zero v1.0 Universal") {
+    return `[!${licenseText}(https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)`
+  } else if (license === "Eclipse Public License 1.0") {
+    return `[!${licenseText}(https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)`
   } else {
     return ""
   }
@@ -86,8 +92,7 @@ ${renderSection("Contribution", data.contribution)}
 
 ${renderSection("Tests", data.tests, data.testCode)}
 
-${renderSection("Questions", 
-  `
+${renderSection("Questions", `
 If you have any questions you can find me on GitHub here: [${data.github}](https://github.com/${data.github})
   
 You can also contact me via email here: [${data.email}](${data.email})`
