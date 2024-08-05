@@ -1,6 +1,8 @@
 # README Generator
 A command-line interface that allows users to generate a markdown file for their project repository in the form of a README.md file. This application was built as a project for Coding Bootcamp.
 
+A video demonstration of this application can be found [here](https://www.youtube.com/watch?v=Cq_hItqwuWM).
+
 ## Table of Contents
 - [Resources](#resources)
 - [Installation](#installation)
